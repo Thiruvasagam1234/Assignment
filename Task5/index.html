@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>La Bella Cuisine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .navbar {
+      background-color: #8B0000;
+    }
+    .navbar-brand, .nav-link, .nav-link:hover {
+      color: #fff;
+    }
+    .menu-item:hover {
+      background-color: #f8f9fa;
+      cursor: pointer;
+    }
+    .gallery-img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .contact-form {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .specials ul li::before {
+      content: "🍽️ ";
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark px-3">
+  <a class="navbar-brand" href="#">La Bella Cuisine</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navContent">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+      <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Home Section -->
+<section id="home" class="container my-5">
+  <h1 class="text-center">Welcome to La Bella Cuisine</h1>
+  <p class="text-center">An exquisite blend of <b>Italian tradition</b> and <i>modern flavors</i>. Join us for a culinary experience you'll never forget!</p>
+  <video controls width="100%" poster="restaurant-poster.jpg">
+    <source src="restaurant-tour.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
+
+<!-- Menu Section -->
+<section id="menu" class="container my-5">
+  <h2 class="mb-4">Our Menu</h2>
+  <table class="table table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Item</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="menu-item">
+        <td>Margherita Pizza <span class="badge bg-success">New</span></td>
+        <td>Classic pizza with fresh basil, tomatoes, and mozzarella.</td>
+        <td>$12</td>
+      </tr>
+      <tr class="menu-item">
+        <td>Fettuccine Alfredo <span class="badge bg-danger">Special</span></td>
+        <td>Creamy pasta with parmesan and garlic.</td>
+        <td>$14</td>
+      </tr>
+      <tr class="menu-item">
+        <td>Tiramisu</td>
+        <td>Traditional Italian dessert with coffee and mascarpone.</td>
+        <td>$7</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="specials mt-4">
+    <h4>Chef's Recommendations</h4>
+    <ul>
+      <li>Stuffed Ravioli with Truffle Cream</li>
+      <li>Wood-fired Roasted Chicken</li>
+      <li>Lemon Sorbet with Basil Syrup</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="container my-5">
+  <h2 class="mb-4">Gallery</h2>
+  <!-- Bootstrap Carousel -->
+  <div id="dishCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+    <div class="carousel-inner rounded">
+      <div class="carousel-item active">
+        <img src="dish1.jpg" class="d-block w-100" alt="Dish 1">
+      </div>
+      <div class="carousel-item">
+        <img src="dish2.jpg" class="d-block w-100" alt="Dish 2">
+      </div>
+      <div class="carousel-item">
+        <img src="interior.jpg" class="d-block w-100" alt="Restaurant Interior">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#dishCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#dishCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Image Grid -->
+  <div class="row g-3">
+    <div class="col-md-4"><img src="pasta.jpg" class="gallery-img" alt="Pasta"></div>
+    <div class="col-md-4"><img src="wine.jpg" class="gallery-img" alt="Wine"></div>
+    <div class="col-md-4"><img src="dessert.jpg" class="gallery-img" alt="Dessert"></div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="container my-5">
+  <h2>Contact Us / Reservation</h2>
+  <form class="row contact-form mt-3">
+    <div class="col-md-6 mb-3">
+      <label for="name" class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="date" class="form-label">Reservation Date</label>
+      <input type="date" class="form-control" id="date">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="guests" class="form-label">Number of Guests</label>
+      <input type="number" class="form-control" id="guests" min="1">
+    </div>
+    <div class="col-12 mb-3">
+      <textarea class="form-control" rows="4" placeholder="Additional message or requests"></textarea>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-danger">Reserve Table</button>
+    </div>
+  </form>
+</section>
+
+<!-- Bootstrap Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
